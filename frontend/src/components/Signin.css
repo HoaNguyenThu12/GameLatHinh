@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(218, 213, 208);
+  }
+  
+  .signin-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px; /* Khoảng cách giữa các hàng */
+  }
+  
+  label {
+    flex: 1; /* Cho label chiếm 1 phần */
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 5px; /* Cách input 5px */
+  }
+  
+  input {
+    flex: 2; /* Cho input chiếm 2 phần */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #4a2b0a;
+    outline: none;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end; /* Đưa button về phía bên phải */
+  }
+  
+  button {
+    padding: 8px 16px; /* Kích thước nhỏ hơn */
+    background-color: #4a2b0a;
+    color: white;
+    font-size: 0.9rem; /* Kích thước chữ nhỏ hơn */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3a1c0a;
+  }
+
+  .signup-button {
+    margin-right: 5px; /* Cách nút Sign In 5px */
+}
+
+
+/* Media Queries cho điện thoại */
+@media (max-width: 600px) {
+  .container {
+      padding: 10px; /* Giảm padding trên thiết bị di động */
+      height: 95vh;
+  }
+  .signin-container {
+    width: 90%; /* Chiếm 90% chiều rộng màn hình */
+    padding: 15px; /* Giảm padding cho thiết bị nhỏ */
+}
+
+  .profile .name {
+      font-size: 18px; /* Giảm kích thước chữ cho tên */
+  }
+
+  .profile .coins {
+      font-size: 16px; /* Giảm kích thước chữ cho coins */
+  }
+
+  .grid .cell {
+      font-size: 18px; /* Giảm kích thước chữ cho ô */
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+      padding: 13px; /* Giảm padding trên thiết bị di động */
+      height: 95vh;
+  }
+  .signin-container {
+    width: 80%; /* Chiếm 80% chiều rộng màn hình */
+    padding: 18px; /* Giảm padding */
+}
+
+  .profile .name {
+      font-size: 21px; /* Giảm kích thước chữ cho tên */
+  }
+
+  .profile .coins {
+      font-size: 13px; /* Giảm kích thước chữ cho coins */
+  }
+
+  .grid .cell {
+      font-size: 21px; /* Giảm kích thước chữ cho ô */
+  }
+}
+
+  

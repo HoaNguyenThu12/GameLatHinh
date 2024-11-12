@@ -1,0 +1,140 @@
+body {
+    background-color: rgb(160, 169, 166);
+    font-family: system-ui;
+}
+
+.container {
+    background-color: rgb(218, 213, 208);
+    width: 700px;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px; /* Giảm padding để tạo không gian cho các phần tử */
+    box-shadow: 50px 150px 50px #858585;
+    display: flex;
+    flex-direction: column; /* Đặt hướng cột để các phần tử xếp chồng lên nhau */
+    align-items: stretch; /* Chỉnh sửa thành stretch để profile chiếm chiều rộng */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.home-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(218, 213, 208);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Căn giữa nội dung */
+
+}
+
+.create-room-container {
+    margin-bottom: 20px; /* Khoảng cách dưới nút Tạo phòng */
+}
+
+.search-container {
+    display: flex; /* Sử dụng flexbox để sắp xếp */
+    justify-content: center; /* Căn giữa ô nhập */
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #4a2b0a;
+    border-radius: 5px; /* Bo góc */
+}
+
+.create-room-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4a2b0a; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc */
+    cursor: pointer; /* Hiển thị tay khi di chuột */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+.create-room-button:hover {
+    background-color: #3a1c0a; /* Màu nền khi hover */
+}
+
+/* Home.css */
+
+.user-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2rem;
+    color: #4a2b0a;
+  }
+  
+  .home-container {
+    text-align: center;
+  }
+  
+  .create-room-container {
+    margin-top: 20px;
+  }
+  
+  .create-room-button {
+    padding: 10px 20px;
+    background-color: #4a2b0a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-container {
+    margin-top: 20px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+
+
+/* Media Queries cho điện thoại */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Giảm padding trên thiết bị di động */
+        height: 95vh;
+    }
+
+    .profile .name {
+        font-size: 18px; /* Giảm kích thước chữ cho tên */
+    }
+
+    .profile .coins {
+        font-size: 16px; /* Giảm kích thước chữ cho coins */
+    }
+
+    .grid .cell {
+        font-size: 18px; /* Giảm kích thước chữ cho ô */
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 13px; /* Giảm padding trên thiết bị di động */
+        height: 95vh;
+    }
+
+    .profile .name {
+        font-size: 21px; /* Giảm kích thước chữ cho tên */
+    }
+
+    .profile .coins {
+        font-size: 13px; /* Giảm kích thước chữ cho coins */
+    }
+
+    .grid .cell {
+        font-size: 21px; /* Giảm kích thước chữ cho ô */
+    }
+}

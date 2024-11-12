@@ -1,0 +1,57 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/gamelathinh
+    volumes:
+      - ./backend:/app
+      - ./backend/.env:/app/.env
+      - /app/node_modules
+    networks:
+      - lathinh-app
+      
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+    networks:
+      - lathinh-app
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+    networks:
+      - lathinh-app
+
+  mongo-express:
+    image: mongo-express:latest
+    ports:
+      - "8081:8081"  # Cổng mặc định của Mongo Express là 8081
+    depends_on:
+      - mongo
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017/gamelathinh
+    networks:
+      - lathinh-app
+
+networks:
+  lathinh-app:
+    driver: bridge
+
+volumes:
+  mongo-data:

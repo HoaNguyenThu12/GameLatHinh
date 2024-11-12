@@ -1,0 +1,167 @@
+
+body {
+    background-color: rgb(160, 169, 166);
+    font-family: system-ui;
+}
+
+.container {
+    background-color: rgb(218, 213, 208);
+    width: 700px;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px; /* Giảm padding để tạo không gian cho các phần tử */
+    box-shadow: 50px 150px 50px #858585;
+    display: flex;
+    flex-direction: column; /* Đặt hướng cột để các phần tử xếp chồng lên nhau */
+    align-items: stretch; /* Chỉnh sửa thành stretch để profile chiếm chiều rộng */
+    height: 95vh;
+}
+
+.profile {
+    background-color: #4a2b0a;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    margin: 10px 0; /* Giảm margin theo chiều dọc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Thêm bóng cho profile */
+    width: 33%; /* Giữ lại chiều rộng như bạn đã chỉ định */
+}
+
+/* Phần profile ở trên */
+.profile.top {
+    
+    margin-right: auto;
+}
+
+/* Phần profile ở dưới */
+.profile.bottom {
+    
+    margin-left: auto; /* Đẩy phần tử này về bên phải */
+}
+
+/* Định dạng hình ảnh */
+.profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile .name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile .coins {
+    color: gold;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.profile .coins i {
+    margin-right: 5px;
+}
+
+.grid-container {
+    background-color: white;
+    border: 2px solid #4a2b0a;
+    width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+    flex: 1; /* Để grid-container chiếm không gian còn lại */
+    display: flex;
+    justify-content: center; /* Căn giữa grid bên trong container */
+    align-items: center; /* Căn giữa nội dung bên trong */
+}
+
+.grid {
+    width: 100%;
+    max-width: 400px; /* Giới hạn chiều rộng của grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; /* Khoảng cách giữa các ô */
+    padding: 10px;
+}
+
+.grid .cell {
+    background-color: #e0e0e0;
+    border: 1px solid #4a2b0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    height: 80px; /* Chiều cao ô */
+}
+
+.grid-4x4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Định dạng lưới 4x4 */
+    grid-gap: 10px;
+  }
+  
+
+  
+  
+  
+  
+
+/* Media Queries cho điện thoại */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Giảm padding trên thiết bị di động */
+        height: 95vh;
+    }
+
+    .profile .name {
+        font-size: 18px; /* Giảm kích thước chữ cho tên */
+    }
+
+    .profile .coins {
+        font-size: 16px; /* Giảm kích thước chữ cho coins */
+    }
+
+    .grid .cell {
+        font-size: 18px; /* Giảm kích thước chữ cho ô */
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 13px; /* Giảm padding trên thiết bị di động */
+        height: 95vh;
+    }
+
+    .profile .name {
+        font-size: 21px; /* Giảm kích thước chữ cho tên */
+    }
+
+    .profile .coins {
+        font-size: 13px; /* Giảm kích thước chữ cho coins */
+    }
+
+    .grid .cell {
+        font-size: 21px; /* Giảm kích thước chữ cho ô */
+    }
+}
+
+.cell {
+    width: 100px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cell.flipped {
+    background-color: #fff; /* Màu sắc khi thẻ đã lật */
+  }
+  
+  .cell.active {
+    background-color: #add8e6; /* Màu sắc khi thẻ đang được nhấn */
+  }
